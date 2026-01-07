@@ -2,33 +2,68 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Jarry Diao | Home</title>
+  <title>Jarry Diao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0f0f0f;
+      color: #ffffff;
+    }
+
+    /* ===== Top Right Index ===== */
+    .top-index {
+      position: fixed;
+      top: 24px;
+      right: 32px;
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      font-size: 28px;
+      letter-spacing: 1px;
+      color: #fecee0;
+      text-decoration: none;
+      z-index: 1000;
+    }
+
+    .top-index:hover {
+      opacity: 0.8;
+    }
+
+    /* ===== Main Content ===== */
+    .container {
+      max-width: 900px;
+      padding: 120px 48px;
+    }
+
+    h1 {
+      font-size: 64px;
+      margin-bottom: 16px;
+    }
+
+    .subtitle {
+      font-size: 20px;
+      line-height: 1.6;
+      opacity: 0.9;
+      max-width: 720px;
+    }
+  </style>
 </head>
 
 <body>
-  <nav>
-    <h2>Jarry Diao</h2>
-    <a class="active" href="index.html">Home</a>\
-    <a href="engineering.html">Engineering</a>
-    <a href="photography.html">Photography</a>
-    <a href="achievement.html">Achievement</a>
-    <a href="contact.html">Contact</a>
-  </nav>
 
-  <main>
-    <section>
-      <p class="hero-greeting">Hiiiii</p>
+  <!-- Index (top-right) -->
+  <a href="index.html" class="top-index">INDEX</a>
 
-      <h1>This is<br>Jarry Diao</h1>
+  <!-- Main Home Content -->
+  <div class="container">
+    <h1>Hii, I’m<br>Jarry Diao</h1>
 
-      <p class="hero-description">
-        Engineer, FTC & FRC Team Engineering PM, Drive Coach, Captain, Mentor, Inventor,
-        Open-Source Community Co-Founder, Cross-Border Stray Animal Rescue Platform Founder,
-        Early-Stage Entrepreneur, Photographer.
-      </p>
-    </section>
-  </main>
-</body>
-</html>
+    <p class="subtitle">
+      Engineer, Inventor,<br>
+      FTC & FRC Team Captain & Mentor,<br>
+      Open-Source Community Co-Founder,<br>
+      Cross-Border Stray Animal Rescue Platform Founder,<br>
+      Early-Stage Entrepreneur, Photographer.
+    </p>
+  </di
