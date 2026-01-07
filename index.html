@@ -6,12 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
-    /* ===== Global ===== */
     body {
       margin: 0;
-      height: 100vh;
-      background: url("images/home-bg.png") center / cover no-repeat;
       font-family: Arial, Helvetica, sans-serif;
+      background: #000;
     }
 
     /* ===== Top Right Navigation ===== */
@@ -22,8 +20,8 @@
       display: flex;
       gap: 28px;
       font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      reminder: 0;
       font-size: 22px;
-      color: #fecee0;
       z-index: 1000;
     }
 
@@ -38,11 +36,18 @@
       opacity: 1;
     }
 
-    /* ===== Instagram Text Link ===== */
+    /* ===== Full Image Page ===== */
+    .page-image {
+      width: 100%;
+      height: auto;          /* 关键：保持比例 */
+      display: block;
+    }
+
+    /* ===== Instagram Text ===== */
     .ins-text {
       position: fixed;
       bottom: 24px;
-      left: 32px; /* 改成 right: 32px 就是右下角 */
+      left: 32px;
       font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
       font-size: 18px;
       color: #fecee0;
@@ -60,7 +65,7 @@
 
 <body>
 
-  <!-- Top Right Navigation -->
+  <!-- Navigation -->
   <nav class="top-nav">
     <a href="index.html">Home</a>
     <a href="engineering.html">Engineering</a>
@@ -68,7 +73,14 @@
     <a href="achievement.html">Achievements</a>
   </nav>
 
-  <!-- Instagram Text Link -->
+  <!-- Main Full Image (THIS enables scrolling) -->
+  <img
+    src="images/home-bg.png"
+    alt="Jarry Diao Home Page"
+    class="page-image"
+  >
+
+  <!-- Instagram -->
   <a
     href="https://www.instagram.com/jarrrrrrydiao"
     target="_blank"
