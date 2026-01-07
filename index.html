@@ -20,7 +20,6 @@
       display: flex;
       gap: 28px;
       font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-      reminder: 0;
       font-size: 22px;
       z-index: 1000;
     }
@@ -36,29 +35,29 @@
       opacity: 1;
     }
 
-    /* ===== Full Image Page ===== */
+    /* ===== Image Wrapper ===== */
+    .image-wrapper {
+      position: relative;   /* 关键：给热区定位参照 */
+    }
+
     .page-image {
       width: 100%;
-      height: auto;          /* 关键：保持比例 */
+      height: auto;
       display: block;
     }
 
-    /* ===== Instagram Text ===== */
-    .ins-text {
-      position: fixed;
-      bottom: 24px;
-      left: 32px;
-      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-      font-size: 18px;
-      color: #fecee0;
-      text-decoration: none;
-      letter-spacing: 1px;
-      opacity: 0.85;
-      z-index: 1000;
-    }
+    /* ===== Instagram Clickable Area ===== */
+    .insta-hotspot {
+      position: absolute;
 
-    .ins-text:hover {
-      opacity: 1;
+      /* 🔽 下面这四个值是“热区位置”，可以微调 */
+      left: 8%;
+      bottom: 12%;
+      width: 38%;
+      height: 8%;
+
+      cursor: pointer;
+      z-index: 10;
     }
   </style>
 </head>
@@ -73,21 +72,22 @@
     <a href="achievement.html">Achievements</a>
   </nav>
 
-  <!-- Main Full Image (THIS enables scrolling) -->
-  <img
-    src="images/home-bg.png"
-    alt="Jarry Diao Home Page"
-    class="page-image"
-  >
+  <!-- Image + Hotspot -->
+  <div class="image-wrapper">
+    <img
+      src="images/home-bg.png"
+      alt="Jarry Diao Home Page"
+      class="page-image"
+    >
 
-  <!-- Instagram -->
-  <a
-    href="https://www.instagram.com/jarrrrrrydiao"
-    target="_blank"
-    class="ins-text"
-  >
-    Instagram
-  </a>
+    <!-- Instagram Hotspot (transparent) -->
+    <a
+      href="https://www.instagram.com/jarrrrrrydiao"
+      target="_blank"
+      class="insta-hotspot"
+      aria-label="Instagram"
+    ></a>
+  </div>
 
 </body>
 </html>
