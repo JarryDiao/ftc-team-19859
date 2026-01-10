@@ -17,7 +17,7 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    /* ========== Top-right navigation ========== */
+    /* ===== Top right navigation ===== */
     .top-nav{
       position: fixed;
       top: 22px;
@@ -28,29 +28,26 @@
       font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
       font-size: 22px;
       letter-spacing: 1px;
-      user-select:none;
     }
     .top-nav a{
       color: var(--pink);
       text-decoration: none;
-      opacity: .92;
+      opacity: .9;
     }
-    .top-nav a:hover{ opacity: 1; }
+    .top-nav a:hover{ opacity:1; }
     .top-nav a.active{
-      opacity: 1;
+      opacity:1;
       text-decoration: underline;
       text-underline-offset: 6px;
     }
 
-    /* ========== Snap scroll container ========== */
+    /* ===== Scroll container ===== */
     .snap{
       height: 100vh;
       overflow-y: auto;
       scroll-snap-type: y mandatory;
       scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
     }
-
     .section{
       height: 100vh;
       scroll-snap-align: start;
@@ -58,19 +55,18 @@
       overflow: hidden;
     }
 
-    /* ========== Background image (1:1, no crop) ========== */
+    /* ===== Background image ===== */
     .img-panel{
       position:absolute;
       inset:0;
       background-repeat: no-repeat;
       background-position: center center;
-      background-size: contain;   /* 关键：完整显示，不裁切 */
+      background-size: contain; /* 完整显示，不裁切 */
     }
 
     .bg-black{ background:#000; }
     .bg-light{ background:#d9d9d9; }
 
-    /* ========== Common text layer ========== */
     .text-layer{
       position:absolute;
       inset:0;
@@ -78,7 +74,7 @@
       pointer-events:none;
     }
 
-    /* ========== HERO text ========== */
+    /* ===== HERO ===== */
     .hero-text{
       position:absolute;
       left:6vw;
@@ -86,26 +82,22 @@
       max-width:48vw;
       color:#fff;
     }
-
     .hero-title{
       font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-      font-size: clamp(52px, 6.5vw, 104px);
+      font-size: clamp(56px, 7vw, 110px);
       line-height:1.05;
-      margin:0 0 24px;
+      margin-bottom: 28px;
     }
-
     .hero-name{ color:var(--pink); }
 
-    /* 头衔字号加大 */
     .hero-desc{
       font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-      font-size: clamp(22px, 2.4vw, 34px);
+      font-size: clamp(24px, 2.6vw, 36px); /* 头衔字号已加大 */
       line-height:1.35;
-      letter-spacing: 0.5px;
       max-width: 720px;
     }
 
-    /* ========== ABOUT text ========== */
+    /* ===== ABOUT ===== */
     .about-text{
       position:absolute;
       top:14vh;
@@ -117,20 +109,20 @@
     }
     .about-title{
       font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-      font-size: clamp(40px, 5vw, 72px);
-      margin-bottom:20px;
+      font-size: clamp(44px, 5vw, 76px);
+      margin-bottom:24px;
     }
     .about-desc{
       font-size: clamp(16px, 1.4vw, 20px);
       line-height:1.6;
     }
     .about-slogan{
-      margin-top:40px;
+      margin-top:44px;
       font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-      font-size: clamp(28px, 4vw, 48px);
+      font-size: clamp(30px, 4vw, 50px);
     }
 
-    /* ========== Instagram section text (match your format) ========== */
+    /* ===== INSTAGRAM ===== */
     .ig-text{
       position: absolute;
       left: 6vw;
@@ -140,48 +132,35 @@
       letter-spacing: 1px;
       z-index: 20;
     }
-
     .ig-title{
       font-size: clamp(26px, 3vw, 42px);
       margin-bottom: 14px;
     }
-
     .ig-url{
-      font-size: clamp(34px, 4vw, 60px);
+      font-size: clamp(36px, 4.2vw, 62px);
       text-decoration: underline;
       text-underline-offset: 10px;
       line-height: 1.05;
-      max-width: 88vw;
-      word-break: break-word;
     }
-
     .ig-url a{
       color: var(--pink);
       text-decoration: inherit;
     }
 
-    /* ========== Responsive ========== */
-    @media (max-width: 900px){
+    @media (max-width:900px){
       .top-nav{
+        font-size:18px;
+        gap:18px;
         top:14px;
         right:16px;
-        gap:18px;
-        font-size:18px;
       }
-      .hero-text{
-        max-width:90vw;
-        top:16vh;
-      }
-      .ig-text{
-        top:16vh;
-      }
+      .hero-text{ max-width:90vw; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Navigation -->
   <nav class="top-nav">
     <a class="active" href="index.html">Home</a>
     <a href="engineering.html">Engineering</a>
@@ -189,7 +168,6 @@
     <a href="achievement.html">Achievements</a>
   </nav>
 
-  <!-- Main snap scroll -->
   <main class="snap">
 
     <!-- ===== Screen 1: HERO ===== -->
@@ -204,12 +182,11 @@
           </div>
 
           <div class="hero-desc">
-            Engineer &amp; Inventor<br>
+            Engineer · Inventor<br>
             FTC &amp; FRC Team Captain &amp; Mentor<br>
             Open-Source Community Co-Founder<br>
             Cross-Border Stray Animal Rescue Platform Founder<br>
-            Early-Stage Entrepreneur<br>
-            Photographer
+            Early-Stage Entrepreneur · Photographer
           </div>
         </div>
       </div>
@@ -243,16 +220,14 @@
       </div>
     </section>
 
-    <!-- ===== Screen 3: INSTAGRAM (your format) ===== -->
+    <!-- ===== Screen 3: INSTAGRAM ===== -->
     <section class="section bg-black">
-      <div class="img-panel" style="background-image:url('images/instagram-bg.jpg');"></div>
+      <div class="img-panel" style="background-image:url('images/instagram-bg.png');"></div>
 
       <div class="ig-text">
         <div class="ig-title">INS CHANNEL</div>
         <div class="ig-url">
-          <a href="https://www.instagram.com/jarrrrrrydiao"
-             target="_blank"
-             rel="noopener">
+          <a href="https://www.instagram.com/jarrrrrrydiao" target="_blank">
             instagram.com/jarrrrrrydiao
           </a>
         </div>
