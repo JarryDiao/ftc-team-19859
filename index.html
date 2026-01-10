@@ -6,7 +6,9 @@
   <title>Jarry Diao | Home</title>
 
   <style>
-    :root{ --pink:#fecee0; }
+    :root{
+      --pink:#fecee0;
+    }
 
     *{ box-sizing:border-box; }
     html, body{
@@ -17,7 +19,7 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    /* Top-right nav */
+    /* ========== Top-right navigation ========== */
     .top-nav{
       position: fixed;
       top: 22px;
@@ -42,14 +44,13 @@
       text-underline-offset: 6px;
     }
 
-    /* Snap container */
+    /* ========== Snap scroll container ========== */
     .snap{
       height: 100vh;
       overflow-y: auto;
       scroll-snap-type: y mandatory;
       scroll-behavior: smooth;
       -webkit-overflow-scrolling: touch;
-      background:#000;
     }
 
     .section{
@@ -57,52 +58,104 @@
       scroll-snap-align: start;
       position: relative;
       overflow: hidden;
-      background: #000;
     }
 
-    /* 1:1 full image (no cropping) */
+    /* ========== Background image (1:1, no crop) ========== */
     .img-panel{
       position:absolute;
       inset:0;
       background-repeat: no-repeat;
       background-position: center center;
-      background-size: contain;   /* 关键：完整显示，不裁切 */
+      background-size: contain;
     }
 
-    /* Background helper colors (for contain empty area) */
-    .bg-black{ background-color:#000; }
-    .bg-light{ background-color:#d9d9d9; }
+    .bg-black{ background:#000; }
+    .bg-light{ background:#d9d9d9; }
 
-    /* Instagram clickable overlay */
+    /* ========== Common text layer ========== */
+    .text-layer{
+      position:absolute;
+      inset:0;
+      z-index:10;
+      pointer-events:none;
+    }
+
+    /* ========== HERO text ========== */
+    .hero-text{
+      position:absolute;
+      left:6vw;
+      top:18vh;
+      max-width:46vw;
+      color:#fff;
+    }
+    .hero-title{
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      font-size: clamp(48px, 6vw, 96px);
+      line-height:1.05;
+      margin:0 0 20px;
+    }
+    .hero-name{ color:var(--pink); }
+    .hero-desc{
+      font-size: clamp(16px, 1.6vw, 22px);
+      line-height:1.6;
+    }
+
+    /* ========== ABOUT text ========== */
+    .about-text{
+      position:absolute;
+      top:14vh;
+      left:50%;
+      transform:translateX(-50%);
+      width:min(900px, 88vw);
+      text-align:center;
+      color:#111;
+    }
+    .about-title{
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      font-size: clamp(40px, 5vw, 72px);
+      margin-bottom:20px;
+    }
+    .about-desc{
+      font-size: clamp(16px, 1.4vw, 20px);
+      line-height:1.6;
+    }
+    .about-slogan{
+      margin-top:40px;
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      font-size: clamp(28px, 4vw, 48px);
+    }
+
+    /* ========== Instagram link ========== */
     .ig-link{
-      position: absolute;
-      left: 6vw;
-      top: 18vh;
-      z-index: 20;
-      color: var(--pink);
+      position:absolute;
+      left:6vw;
+      top:18vh;
+      z-index:20;
+      color:var(--pink);
       font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
       font-size: clamp(22px, 3.2vw, 44px);
-      letter-spacing: 1px;
+      letter-spacing:1px;
       text-decoration: underline;
       text-underline-offset: 10px;
-      opacity: .98;
-      line-height: 1.05;
-      max-width: 88vw;
+      max-width:88vw;
       word-break: break-word;
+      pointer-events:auto;
     }
-    .ig-link:hover{ opacity: 1; }
 
+    /* ========== Responsive ========== */
     @media (max-width: 900px){
       .top-nav{
-        top: 14px;
-        right: 16px;
-        gap: 18px;
-        font-size: 18px;
+        top:14px;
+        right:16px;
+        gap:18px;
+        font-size:18px;
+      }
+      .hero-text{
+        max-width:88vw;
+        top:16vh;
       }
       .ig-link{
-        left: 6vw;
-        top: 16vh;
-        text-underline-offset: 8px;
+        top:16vh;
       }
     }
   </style>
@@ -110,6 +163,7 @@
 
 <body>
 
+  <!-- Navigation -->
   <nav class="top-nav">
     <a class="active" href="index.html">Home</a>
     <a href="engineering.html">Engineering</a>
@@ -117,61 +171,60 @@
     <a href="achievement.html">Achievements</a>
   </nav>
 
+  <!-- Main snap scroll -->
   <main class="snap">
 
-   <!-- Screen 1: HERO -->
-<section class="section bg-black">
-  <div class="img-panel" style="background-image:url('images/hero-person.png');"></div>
+    <!-- ===== Screen 1: HERO ===== -->
+    <section class="section bg-black">
+      <div class="img-panel" style="background-image:url('images/hero-person.png');"></div>
 
-  <div class="text-layer">
-    <div class="hero-text">
-      <h1 class="hero-title">
-        Hii, I’m<br>
-        <span class="hero-name">Jarry Diao</span>
-      </h1>
+      <div class="text-layer">
+        <div class="hero-text">
+          <div class="hero-title">
+            Hii, I’m<br>
+            <span class="hero-name">Jarry Diao</span>
+          </div>
 
-      <p class="hero-desc">
-        Engineer, Inventor,<br>
-        FTC &amp; FRC Team Captain &amp; Mentor,<br>
-        Open-Source Community Co-Founder,<br>
-        Cross-Border Stray Animal Rescue Platform Founder,<br>
-        Early-Stage Entrepreneur, Photographer.
-      </p>
-    </div>
-  </div>
-</section>
+          <div class="hero-desc">
+            Engineer, Inventor,<br>
+            FTC &amp; FRC Team Captain &amp; Mentor,<br>
+            Open-Source Community Co-Founder,<br>
+            Cross-Border Stray Animal Rescue Platform Founder,<br>
+            Early-Stage Entrepreneur, Photographer.
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- ===== Screen 2: ABOUT ===== -->
+    <section class="section bg-light">
+      <div class="img-panel" style="background-image:url('images/about-bg.png');"></div>
 
-  /* ===== ABOUT text ===== */
-.about-text{
-  position: absolute;
-  top: 14vh;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(900px, 88vw);
-  text-align: center;
-  color: #111;
-}
+      <div class="text-layer">
+        <div class="about-text">
+          <div class="about-title">About</div>
 
-.about-title{
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: clamp(40px, 5vw, 72px);
-  margin-bottom: 20px;
-}
+          <div class="about-desc">
+            Welcome back to my channel! This is Jarry Diao.<br><br>
+            Glad that you found me! I’m an engineer and inventor, FTC/FRC captain and mentor,
+            open-source community co-founder, founder of a cross-border stray animal rescue platform,
+            and an early-stage entrepreneur. Over 18 years, I’ve built multiple projects
+            (2 patents, 1 software copyright), mentored FTC teams to strong results at home and abroad,
+            worked with FTC 19859 and 19666, founded FTC 30066, served with FRC 10086,
+            and advised FTC 22438.<br><br>
+            As a photographer and the founder of my school photography club, I led the setup and
+            live direction of our sports-day broadcast platform for two years and produced
+            a personal photobook to celebrate my 18th birthday.
+          </div>
 
-.about-desc{
-  font-size: clamp(16px, 1.4vw, 20px);
-  line-height: 1.6;
-}
+          <div class="about-slogan">
+            Building things, capturing moments!
+          </div>
+        </div>
+      </div>
+    </section>
 
-.about-slogan{
-  margin-top: 40px;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: clamp(28px, 4vw, 48px);
-}
-
-
-    <!-- Screen 3: INSTAGRAM -->
+    <!-- ===== Screen 3: INSTAGRAM ===== -->
     <section class="section bg-black">
       <div class="img-panel" style="background-image:url('images/instagram-bg.jpg');"></div>
 
